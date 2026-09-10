@@ -1,0 +1,188 @@
+.user-audit-logs-container {
+  animation: userAlFadeIn 0.3s ease;
+}
+
+@keyframes userAlFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.user-audit-logs-header {
+  margin-bottom: 1.5rem;
+}
+
+.user-audit-logs-header h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.user-audit-logs-header p {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.user-audit-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+.user-al-tab-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s;
+  width: auto;
+}
+
+.user-al-tab-btn:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+  transform: none;
+  box-shadow: none;
+}
+
+.user-al-tab-btn.active {
+  background: linear-gradient(135deg, #0d9488, #0891b2);
+  color: white;
+}
+
+.user-audit-logs-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.user-al-loading-state,
+.user-al-error-state,
+.user-al-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  gap: 1rem;
+}
+
+.user-al-loading-state .user-al-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #0d9488;
+  border-radius: 50%;
+  animation: userAlSpin 0.8s linear infinite;
+}
+
+@keyframes userAlSpin {
+  to { transform: rotate(360deg); }
+}
+
+.user-al-error-state span,
+.user-al-empty-state span {
+  font-size: 3rem;
+}
+
+.user-al-error-state p,
+.user-al-empty-state p {
+  color: #64748b;
+}
+
+.user-al-retry-btn {
+  background: #0d9488;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: auto;
+}
+
+.user-al-logs-table-wrapper {
+  overflow-x: auto;
+}
+
+.user-al-logs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-al-logs-table th {
+  text-align: right;
+  padding: 0.75rem;
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.user-al-logs-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.875rem;
+  vertical-align: top;
+}
+
+.user-al-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.user-al-badge-success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.user-al-badge-warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.user-al-badge-danger {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.user-al-badge-info {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.user-al-changes-cell {
+  max-width: 300px;
+}
+
+.user-al-change-item {
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.user-al-change-item.old {
+  color: #dc2626;
+}
+
+.user-al-change-item.new {
+  color: #10b981;
+}
+
+.user-al-change-label {
+  font-weight: 600;
+  margin-left: 0.25rem;
+}
+
+.user-al-change-value {
+  word-break: break-word;
+}

@@ -1,0 +1,186 @@
+.user-bank-account-container {
+  position: relative;
+}
+
+.user-bank-toast-message {
+  position: fixed;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  z-index: 1100;
+  animation: userBankSlideDown 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes userBankSlideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.user-bank-toast-message.success {
+  background: #10b981;
+  color: white;
+}
+
+.user-bank-toast-message.error {
+  background: #ef4444;
+  color: white;
+}
+
+.user-bank-account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.user-bank-account-header h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e293b;
+  margin: 0;
+}
+
+.user-bank-btn-delete {
+  background: #fef2f2;
+  color: #ef4444;
+  border: 1px solid #fee2e2;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  width: auto;
+}
+
+.user-bank-btn-delete:hover {
+  background: #ef4444;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
+}
+
+.user-bank-account-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.user-bank-account-info {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.user-bank-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.user-bank-info-row:last-child {
+  border-bottom: none;
+}
+
+.user-bank-info-label {
+  font-weight: 600;
+  color: #475569;
+}
+
+.user-bank-info-value {
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.user-bank-iban {
+  font-family: monospace;
+  direction: ltr;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+}
+
+.user-bank-card-number {
+  font-family: monospace;
+  direction: ltr;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  background: #e2e8f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+}
+
+.user-bank-account-form-wrapper {
+  margin-top: 1rem;
+}
+
+.user-bank-account-form-wrapper h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.user-bank-no-data-state {
+  text-align: center;
+  padding: 2rem;
+}
+
+.user-bank-no-data-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.user-bank-no-data-state h3 {
+  font-size: 1.25rem;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.user-bank-no-data-state p {
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+.user-bank-loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.user-bank-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #0d9488;
+  border-radius: 50%;
+  animation: userBankSpin 0.8s linear infinite;
+}
+
+@keyframes userBankSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.user-bank-loading-state p {
+  margin-top: 1rem;
+  color: #64748b;
+}

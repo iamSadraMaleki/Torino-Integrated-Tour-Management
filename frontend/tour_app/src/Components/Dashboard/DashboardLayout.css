@@ -1,0 +1,277 @@
+/* ============================================
+   Dashboard Layout
+   ============================================ */
+.dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
+  direction: rtl;
+}
+
+/* ============================================
+   Dashboard Body
+   ============================================ */
+.dashboard-body {
+  display: flex;
+  padding-top: 80px;  /* افزایش دادم از 70 به 80 */
+  min-height: 100vh;
+}
+
+/* ============================================
+   Dashboard Main
+   ============================================ */
+.dashboard-main {
+  flex: 1;
+  transition: all 0.3s ease;
+  padding: 1.5rem;
+  margin-right: 260px;  /* اضافه شد - فاصله از سایدبار */
+  min-height: calc(100vh - 80px);
+}
+
+/* وقتی سایدبار بسته است */
+.dashboard-main.expanded {
+  margin-right: 70px;
+}
+
+/* Responsive برای موبایل */
+@media (max-width: 768px) {
+  .dashboard-main {
+    margin-right: 0;
+    padding: 1rem;
+  }
+  
+  .dashboard-main.expanded {
+    margin-right: 0;
+  }
+}
+
+/* ============================================
+   Dashboard Content
+   ============================================ */
+.dashboard-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   Page Header
+   ============================================ */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.page-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #0B3B4B 0%, #0d9488 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+}
+
+.page-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.page-breadcrumb .separator {
+  color: #cbd5e1;
+}
+
+.page-breadcrumb .current {
+  color: #0d9488;
+  font-weight: 500;
+}
+
+/* ============================================
+   Stats Grid
+   ============================================ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ============================================
+   Stat Card
+   ============================================ */
+.stat-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: #ccfbf1;
+}
+
+.stat-info h3 {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 0.5rem 0;
+}
+
+.stat-number {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #1e293b;
+  margin: 0;
+}
+
+.stat-icon {
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, #ccfbf1, #f0fdfa);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #0d9488;
+}
+
+/* ============================================
+   Welcome Card
+   ============================================ */
+.welcome-card {
+  background: linear-gradient(135deg, #0B3B4B 0%, #1A5F6E 100%);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-card::before {
+  content: "✨";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  font-size: 8rem;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.welcome-card::after {
+  content: "🌟";
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  font-size: 6rem;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.welcome-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+}
+
+.welcome-text {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* ============================================
+   Section Card
+   ============================================ */
+.section-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #1e293b;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-title span {
+  font-size: 1.25rem;
+}
+
+.section-link {
+  color: #0d9488;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.section-link:hover {
+  color: #0f766e;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+  .dashboard-main {
+    padding: 1rem;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .welcome-card {
+    padding: 1.5rem;
+  }
+
+  .welcome-title {
+    font-size: 1.25rem;
+  }
+}

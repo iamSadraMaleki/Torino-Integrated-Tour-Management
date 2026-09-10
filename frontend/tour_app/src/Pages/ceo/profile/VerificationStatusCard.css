@@ -1,0 +1,198 @@
+/* ============================================
+   VERIFICATION STATUS CARD
+   ============================================ */
+.verification-status-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  animation: slideDown 0.4s ease;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.status-icon-wrapper {
+  flex-shrink: 0;
+}
+
+.status-icon {
+  font-size: 3rem;
+}
+
+/* NOT_VERIFIED */
+.verification-status-card.not-verified {
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border-right: 4px solid #3b82f6;
+}
+.verification-status-card.not-verified .status-icon {
+  color: #3b82f6;
+}
+
+/* PENDING */
+.verification-status-card.pending {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-right: 4px solid #f59e0b;
+}
+.pending-icon {
+  color: #f59e0b;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+/* REJECTED */
+.verification-status-card.rejected {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  border-right: 4px solid #ef4444;
+}
+.rejected-icon {
+  color: #ef4444;
+}
+
+/* VERIFIED */
+.verification-status-card.verified {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-right: 4px solid #22c55e;
+}
+.verified-icon {
+  color: #22c55e;
+  animation: scaleCheck 0.5s ease;
+}
+@keyframes scaleCheck {
+  0% { transform: scale(0); }
+  80% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Content */
+.status-content {
+  flex: 1;
+}
+
+.status-content h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+}
+
+.verification-status-card.not-verified .status-content h3 {
+  color: #1e40af;
+}
+.verification-status-card.pending .status-content h3 {
+  color: #92400e;
+}
+.verification-status-card.rejected .status-content h3 {
+  color: #b91c1c;
+}
+.verification-status-card.verified .status-content h3 {
+  color: #166534;
+}
+
+.status-content p {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin: 0 0 0.75rem 0;
+}
+
+.verification-details {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.verification-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.verification-note.success {
+  background: rgba(34, 197, 94, 0.1);
+  color: #166534;
+}
+
+.rejection-reason-box {
+  margin: 0.75rem 0;
+  padding: 0.75rem;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 12px;
+  border-right: 3px solid #ef4444;
+}
+
+.rejection-reason-box strong {
+  display: block;
+  font-size: 0.8rem;
+  color: #b91c1c;
+  margin-bottom: 0.25rem;
+}
+
+.rejection-reason-box p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #991b1b;
+}
+
+.verification-action-btn {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.75rem;
+  transition: all 0.2s;
+  width: auto;
+}
+
+.verification-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+.verification-action-btn.retry {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.verification-action-btn.retry:hover {
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .verification-status-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.25rem;
+  }
+
+  .status-icon {
+    font-size: 2.5rem;
+  }
+
+  .verification-note {
+    justify-content: center;
+  }
+}

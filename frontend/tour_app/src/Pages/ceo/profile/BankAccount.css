@@ -1,0 +1,112 @@
+.bank-account-container {
+  position: relative;
+}
+
+.bank-account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.bank-account-header h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e293b;
+  margin: 0;
+}
+
+.bank-account-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.bank-account-info {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.bank-account-info .info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.bank-account-info .info-row:last-child {
+  border-bottom: none;
+}
+
+.bank-account-info .info-label {
+  font-weight: 600;
+  color: #475569;
+}
+
+.bank-account-info .info-value {
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.bank-account-info .iban {
+  font-family: monospace;
+  direction: ltr;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+}
+
+.bank-account-info .card-number {
+  font-family: monospace;
+  direction: ltr;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  background: #e2e8f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+}
+
+.bank-account-form-wrapper {
+  margin-top: 1rem;
+}
+
+.bank-account-form-wrapper h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.bank-account-container .no-data-state {
+  text-align: center;
+  padding: 2rem;
+}
+
+.bank-account-container .no-data-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.bank-account-container .no-data-state h3 {
+  font-size: 1.25rem;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.bank-account-container .no-data-state p {
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+.bank-account-container .loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}

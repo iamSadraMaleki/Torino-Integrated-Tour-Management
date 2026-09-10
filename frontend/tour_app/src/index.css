@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* فونت‌ها */
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('/fonts/Vazirmatn-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('/fonts/Vazirmatn-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../public/font/Vazirmatn-Black.woff2') format('woff2');
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../public/font/Vazirmatn-Bold.woff2') format('woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../public/font/Vazirmatn-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../public/font/Vazirmatn-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../public/font/Vazirmatn-Light.woff2') format('woff2');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../public/font/Vazirmatn-Medium.woff2') format('woff2');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../public/font/Vazirmatn-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../public/font/Vazirmatn-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../public/font/Vazirmatn-Thin.woff2') format('woff2');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../public/font/Vazirmatn[wght].woff2') format('woff2');
+  font-weight: 100 900;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Vazirmatn", system-ui, sans-serif;
+}
+
+body {
+  direction: rtl;
+  background: linear-gradient(135deg, #f8fafc, #ffffff, #eff6ff);
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}

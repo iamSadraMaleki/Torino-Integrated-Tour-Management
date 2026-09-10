@@ -1,0 +1,210 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   🚗 TOUR VEHICLES MANAGER
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* نکته: استایل دکمه مدیریت خودروها (tour-vehicles-manage-btn) فقط در ToursManagement.css تعریف می‌شود
+   تا همه دکمه‌های گرید مدیریت تور هم‌اندازه و یکدست باشند */
+
+/* دکمه افزودن خودرو */
+.tour-vehicles-add-btn {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-add-vehicle {
+  background: linear-gradient(135deg, #0d9488, #0891b2);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-add-vehicle:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+}
+
+.btn-add-vehicle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.no-vehicle-warning {
+  font-size: 0.8rem;
+  color: #f59e0b;
+  background: #fef3c7;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+/* فرم تخصیص خودرو */
+.tour-assign-vehicle-form {
+  background: #f8fafc;
+  padding: 1.2rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.tour-assign-vehicle-form .form-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.tour-assign-vehicle-form .form-group {
+  flex: 2;
+  min-width: 200px;
+}
+
+.tour-assign-vehicle-form .form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.tour-assign-vehicle-form .form-group select {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  background: white;
+}
+
+/* لیست خودروها */
+.tour-vehicles-list {
+  margin-top: 0.5rem;
+}
+
+.tour-vehicles-list h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.vehicles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.vehicle-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s;
+}
+
+.vehicle-item:hover {
+  background: white;
+  border-color: #ccfbf1;
+  transform: translateX(-4px);
+}
+
+.vehicle-icon {
+  font-size: 2rem;
+}
+
+.vehicle-info {
+  flex: 1;
+}
+
+.vehicle-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.3rem;
+}
+
+.vehicle-details {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+.vehicle-details span {
+  background: #f1f5f9;
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+}
+
+.vehicle-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-remove-vehicle {
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-remove-vehicle:hover {
+  background: #fecaca;
+  transform: scale(1.05);
+}
+
+.no-vehicles {
+  text-align: center;
+  padding: 2rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  color: #94a3b8;
+}
+
+.no-vehicles svg {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+}
+
+/* دکمه بروزرسانی در فوتر مودال */
+.tour-btn-refresh {
+  background: #f1f5f9;
+  color: #475569;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.tour-btn-refresh:hover {
+  background: #e2e8f0;
+}

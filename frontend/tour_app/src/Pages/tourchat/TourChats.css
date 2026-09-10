@@ -1,0 +1,611 @@
+/* ============ گفتگوی مسافر با مدیر آژانس ============ */
+
+.tc-container {
+  padding: 0.25rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.tc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tc-header h1 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.tc-header p {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin: 0.25rem 0 0;
+}
+
+.tc-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  color: #94a3b8;
+}
+
+.tc-empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tc-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-right: 4px solid #0d9488;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tc-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
+  border-right-color: #0891b2;
+}
+
+.tc-card-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #0d9488, #0891b2);
+  color: #fff;
+}
+
+.tc-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.tc-card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1e293b;
+  margin: 0;
+}
+
+.tc-card-title .tc-tour-code {
+  font-size: 0.7rem;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 0.1rem 0.5rem;
+  border-radius: 99px;
+  font-weight: 600;
+  direction: ltr;
+}
+
+.tc-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+}
+
+.tc-card-preview {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: #475569;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tc-card-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.tc-card-time {
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+.tc-count-badge {
+  background: #0d9488;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.45rem;
+}
+
+/* ============ اینباکس (unread + اخطار) ============ */
+
+.tc-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.tc-inbox-unread-total {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.4rem 0.8rem;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+.tc-card-unread {
+  background: #f0fdfa;
+  border-right-color: #dc2626;
+}
+
+.tc-unread-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #dc2626;
+  flex-shrink: 0;
+  animation: tcPulse 1.6s ease infinite;
+}
+
+@keyframes tcPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.tc-count-unread {
+  background: #dc2626;
+}
+
+.tc-warnings-box {
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-radius: 14px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.tc-warnings-title {
+  font-weight: 700;
+  color: #92400e;
+  font-size: 0.88rem;
+  margin-bottom: 0.5rem;
+}
+
+.tc-warning-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.4rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed #fde68a;
+  font-size: 0.8rem;
+}
+
+.tc-warning-item:last-child {
+  border-bottom: none;
+}
+
+.tc-warning-reason {
+  color: #78350f;
+}
+
+.tc-warning-meta {
+  color: #a16207;
+  font-size: 0.72rem;
+}
+
+/* ============ صفحه چت ============ */
+
+/* پیام حذف‌شده */
+.tc-msg-deleted {
+  background: #f1f5f9 !important;
+  color: #94a3b8 !important;
+  font-style: italic;
+  border: 1px dashed #cbd5e1;
+}
+
+.tc-msg-edited {
+  font-size: 0.68rem;
+  opacity: 0.75;
+}
+
+/* اکشن‌های ویرایش/حذف */
+.tc-msg-actions {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 0.15rem;
+}
+
+.tc-msg-row.agency .tc-msg-actions {
+  justify-content: flex-start;
+}
+
+.tc-msg-row.passenger .tc-msg-actions {
+  justify-content: flex-end;
+}
+
+.tc-msg-action {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  width: 28px;
+  height: 28px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.tc-msg-action:hover {
+  background: #e2e8f0;
+}
+
+.tc-msg-action-danger:hover {
+  background: #fee2e2;
+  border-color: #fecaca;
+}
+
+/* باکس ویرایش پیام */
+.tc-msg-edit-box {
+  background: #fff;
+  border: 1.5px solid #0d9488;
+  border-radius: 12px;
+  padding: 0.5rem;
+  min-width: 260px;
+}
+
+.tc-edit-textarea {
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  font-family: inherit;
+  resize: vertical;
+  background: #f8fafc;
+}
+
+.tc-edit-textarea:focus {
+  outline: none;
+  border-color: #0d9488;
+}
+
+.tc-edit-actions {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.45rem;
+  justify-content: flex-end;
+}
+
+.tc-edit-save {
+  background: #0d9488;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tc-edit-save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tc-edit-cancel {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.tc-chat-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+}
+
+.tc-chat-header {
+  background: linear-gradient(135deg, #0d9488, #0891b2);
+  color: #fff;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.tc-chat-header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tc-chat-header .tc-chat-sub {
+  font-size: 0.78rem;
+  opacity: 0.92;
+  margin-top: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.tc-back-btn {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+  padding: 0.45rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tc-back-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.tc-chat-window {
+  flex: 1;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-height: 52vh;
+  overflow-y: auto;
+  background: #f8fafc;
+}
+
+.tc-msg-row {
+  display: flex;
+  gap: 0.6rem;
+  max-width: 82%;
+}
+
+.tc-msg-row.agency {
+  align-self: flex-start;
+  flex-direction: row;
+}
+
+.tc-msg-row.passenger {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.tc-msg-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  color: #fff;
+  font-weight: 700;
+}
+
+.tc-msg-avatar.agency {
+  background: linear-gradient(135deg, #64748b, #475569);
+}
+
+.tc-msg-avatar.passenger {
+  background: linear-gradient(135deg, #0d9488, #0891b2);
+}
+
+.tc-msg-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.tc-msg-row.agency .tc-msg-body {
+  align-items: flex-start;
+}
+
+.tc-msg-row.passenger .tc-msg-body {
+  align-items: flex-end;
+}
+
+.tc-msg-bubble {
+  padding: 0.65rem 0.95rem;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.tc-msg-row.agency .tc-msg-bubble {
+  background: #e2e8f0;
+  color: #1e293b;
+  border-top-right-radius: 4px;
+}
+
+.tc-msg-row.passenger .tc-msg-bubble {
+  background: linear-gradient(135deg, #0d9488, #0891b2);
+  color: #fff;
+  border-top-left-radius: 4px;
+}
+
+.tc-msg-attach img {
+  max-width: 220px;
+  max-height: 180px;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.tc-msg-name {
+  font-size: 0.68rem;
+  color: #94a3b8;
+}
+
+.tc-msg-time {
+  font-size: 0.65rem;
+  color: #cbd5e1;
+}
+
+.tc-chat-input-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.1rem;
+  border-top: 1px solid #e2e8f0;
+  background: #fff;
+}
+
+.tc-chat-input {
+  flex: 1;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.88rem;
+  font-family: inherit;
+  resize: none;
+  min-height: 44px;
+  max-height: 120px;
+  background: #f8fafc;
+  transition: all 0.2s;
+}
+
+.tc-chat-input:focus {
+  outline: none;
+  border-color: #0d9488;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
+}
+
+.tc-send-btn {
+  background: linear-gradient(135deg, #0d9488, #0891b2);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.tc-send-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
+}
+
+.tc-send-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.tc-sent-flash {
+  font-size: 0.75rem;
+  color: #059669;
+  font-weight: 600;
+  animation: tcFlash 0.3s ease;
+}
+
+@keyframes tcFlash {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tc-attach-btn {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  font-size: 1.05rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.tc-attach-btn:hover {
+  background: #e2e8f0;
+}
+
+.tc-attach-preview {
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  color: #92400e;
+  font-size: 0.72rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tc-error-banner {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .tc-msg-row {
+    max-width: 92%;
+  }
+  .tc-chat-window {
+    max-height: 60vh;
+  }
+}

@@ -1,0 +1,527 @@
+/* ============ سفرهای من ============ */
+.mt-container {
+  padding: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.mt-notice {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  animation: mtFade 2.5s ease forwards;
+}
+
+.mt-error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+@keyframes mtFade {
+  0%, 80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.mt-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: 1rem;
+  color: #64748b;
+}
+
+.mt-spinner {
+  width: 42px;
+  height: 42px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #0ea5e9;
+  border-radius: 50%;
+  animation: mtSpin 0.8s linear infinite;
+}
+
+@keyframes mtSpin {
+  to { transform: rotate(360deg); }
+}
+
+.mt-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.mt-header h1 {
+  font-size: 1.35rem;
+  margin: 0 0 0.25rem;
+  color: #1e293b;
+}
+
+.mt-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.mt-refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  color: #475569;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mt-refresh:hover {
+  background: #e2e8f0;
+}
+
+/* تب‌ها */
+.mt-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 0.35rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.mt-tab {
+  flex: 1;
+  min-width: 160px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  background: transparent;
+  border: none;
+  border-radius: 9px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mt-tab:hover {
+  color: #334155;
+}
+
+.mt-tab.active {
+  background: #fff;
+  color: #0ea5e9;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+.mt-tab-count {
+  background: #0ea5e9;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  padding: 0.05rem 0.5rem;
+  min-width: 22px;
+  text-align: center;
+}
+
+.mt-tab.active .mt-tab-count {
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+}
+
+/* گرید کارت‌ها */
+.mt-section {
+  min-height: 200px;
+}
+
+.mt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.mt-trip-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.mt-trip-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.mt-trip-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.95rem 1.1rem 0.7rem;
+  background: linear-gradient(135deg, #f0f9ff, #ffffff);
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.mt-trip-title h4 {
+  margin: 0 0 0.2rem;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.mt-trip-title small {
+  color: #94a3b8;
+  font-size: 0.72rem;
+}
+
+.mt-status {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.mt-trip-body {
+  padding: 0.85rem 1.1rem;
+  flex: 1;
+}
+
+.mt-trip-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.mt-trip-meta strong {
+  color: #334155;
+}
+
+.mt-passengers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.7rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.mt-passenger-chip {
+  background: #f1f5f9;
+  color: #475569;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.65rem;
+}
+
+.mt-trip-actions {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.8rem 1.1rem;
+  border-top: 1px solid #f1f5f9;
+  background: #fafbfc;
+  flex-wrap: wrap;
+}
+
+.mt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #334155;
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.mt-btn:hover:not(:disabled) {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.mt-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.mt-btn-chat {
+  color: #0284c7;
+  border-color: #bae6fd;
+  background: #f0f9ff;
+}
+
+.mt-btn-chat:hover:not(:disabled) {
+  background: #e0f2fe;
+}
+
+.mt-btn-book {
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  border: none;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+}
+
+.mt-btn-book:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0284c7, #4f46e5);
+  transform: translateY(-2px);
+}
+
+.mt-btn-danger {
+  color: #dc2626;
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+
+.mt-btn-danger:hover:not(:disabled) {
+  background: #fee2e2;
+}
+
+/* کارت علاقه‌مندی */
+.mt-wish-card .mt-trip-head {
+  background: linear-gradient(135deg, #fff1f2, #ffffff);
+}
+
+.mt-wish-heart {
+  color: #e11d48;
+  font-size: 1.05rem;
+  animation: mtHeart 1.6s ease-in-out infinite;
+}
+
+@keyframes mtHeart {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* حالت خالی */
+.mt-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 3rem 1rem;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.mt-empty-icon {
+  font-size: 2.2rem;
+  opacity: 0.5;
+}
+
+@media (max-width: 640px) {
+  .mt-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mt-tab {
+    min-width: 100%;
+  }
+}
+
+/* ============ مودال ثبت نظر ============ */
+.rv-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+  padding: 1rem;
+}
+
+.rv-modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 440px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+  animation: rvPop 0.2s ease;
+}
+
+@keyframes rvPop {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.rv-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  color: #fff;
+}
+
+.rv-modal-header h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.rv-modal-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.rv-modal-close:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.rv-modal-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rv-tour-name {
+  margin: 0;
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.rv-stars-input {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.rv-star-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem;
+  transition: transform 0.15s;
+}
+
+.rv-star-btn:hover {
+  transform: scale(1.2);
+}
+
+.rv-textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.85rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 90px;
+}
+
+.rv-textarea:focus {
+  outline: none;
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12);
+}
+
+.rv-error {
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.8rem;
+}
+
+.rv-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  padding: 0 1.25rem 1.25rem;
+}
+
+.rv-btn-cancel {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  border-radius: 8px;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rv-btn-cancel:hover {
+  background: #e2e8f0;
+}
+
+.rv-btn-submit {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.55rem 1.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rv-btn-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(245, 158, 11, 0.35);
+}
+
+.rv-btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* دکمه‌های نظر در کارت سفر گذشته */
+.mt-btn-review {
+  color: #b45309;
+  border-color: #fcd34d;
+  background: #fffbeb;
+}
+
+.mt-btn-review:hover:not(:disabled) {
+  background: #fef3c7;
+}
+
+.mt-btn-reviewed {
+  color: #16a34a;
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+  cursor: default;
+}

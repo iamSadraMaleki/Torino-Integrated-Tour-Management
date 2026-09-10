@@ -1,0 +1,227 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   🏨 TOUR HOTELS MANAGER
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* نکته: استایل دکمه مدیریت هتل‌ها (tour-hotels-manage-btn) فقط در ToursManagement.css تعریف می‌شود
+   تا همه دکمه‌های گرید مدیریت تور هم‌اندازه و یکدست باشند */
+
+/* دکمه افزودن هتل */
+.tour-hotels-add-btn {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-add-hotel {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-add-hotel:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.btn-add-hotel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.no-hotel-warning {
+  font-size: 0.8rem;
+  color: #059669;
+  background: #d1fae5;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+/* فرم افزودن/ویرایش هتل */
+.tour-add-hotel-form,
+.tour-edit-hotel-form {
+  background: #f8fafc;
+  padding: 1.2rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.tour-edit-hotel-form .form-header h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tour-add-hotel-form .form-row,
+.tour-edit-hotel-form .form-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.tour-add-hotel-form .form-group,
+.tour-edit-hotel-form .form-group {
+  flex: 1;
+  min-width: 150px;
+}
+
+.tour-add-hotel-form .form-group label,
+.tour-edit-hotel-form .form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.tour-add-hotel-form .form-group select,
+.tour-add-hotel-form .form-group input,
+.tour-edit-hotel-form .form-group input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  background: white;
+}
+
+/* لیست هتل‌ها */
+.tour-hotels-list {
+  margin-top: 0.5rem;
+}
+
+.tour-hotels-list h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.hotels-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.hotel-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s;
+}
+
+.hotel-item:hover {
+  background: white;
+  border-color: #d1fae5;
+  transform: translateX(-4px);
+}
+
+.hotel-icon {
+  font-size: 2rem;
+}
+
+.hotel-info {
+  flex: 1;
+}
+
+.hotel-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.3rem;
+}
+
+.hotel-details {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+.hotel-details span {
+  background: #f1f5f9;
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.hotel-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-edit-hotel {
+  background: #dbeafe;
+  color: #2563eb;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-edit-hotel:hover {
+  background: #bfdbfe;
+  transform: scale(1.05);
+}
+
+.btn-remove-hotel {
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-remove-hotel:hover {
+  background: #fecaca;
+  transform: scale(1.05);
+}
+
+.no-hotels {
+  text-align: center;
+  padding: 2rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  color: #94a3b8;
+}
+
+.no-hotels svg {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+}

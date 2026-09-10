@@ -1,0 +1,468 @@
+/* ============ صفحات تخفیف (مدیر آژانس + ادمین) ============ */
+.dc-container {
+  padding: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.dc-notice {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  animation: dcFade 2.5s ease forwards;
+}
+
+.dc-error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+@keyframes dcFade {
+  0%, 80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.dc-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: 1rem;
+  color: #64748b;
+}
+
+.dc-spinner {
+  width: 42px;
+  height: 42px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #ef4444;
+  border-radius: 50%;
+  animation: dcSpin 0.8s linear infinite;
+}
+
+@keyframes dcSpin {
+  to { transform: rotate(360deg); }
+}
+
+.dc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.dc-header h1 {
+  font-size: 1.35rem;
+  margin: 0 0 0.25rem;
+  color: #1e293b;
+}
+
+.dc-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.dc-refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  color: #475569;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dc-refresh:hover {
+  background: #e2e8f0;
+}
+
+/* تب‌ها */
+.dc-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 0.35rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.dc-tab {
+  flex: 1;
+  min-width: 170px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  background: transparent;
+  border: none;
+  border-radius: 9px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dc-tab:hover {
+  color: #334155;
+}
+
+.dc-tab.active {
+  background: #fff;
+  color: #ef4444;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+.dc-tab-count {
+  background: #ef4444;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  padding: 0.05rem 0.5rem;
+  min-width: 22px;
+  text-align: center;
+}
+
+/* فرم‌ها */
+.dc-form-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.dc-form-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.1rem;
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.dc-form-body {
+  padding: 1.1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.9rem;
+}
+
+.dc-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.dc-form-group label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.dc-form-group input,
+.dc-form-group select {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-family: inherit;
+}
+
+.dc-form-group input:focus,
+.dc-form-group select:focus {
+  outline: none;
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+}
+
+.dc-form-actions {
+  display: flex;
+  align-items: flex-end;
+  padding: 0 1.1rem 1.1rem;
+}
+
+.dc-btn-submit {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 1.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dc-btn-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(239, 68, 68, 0.3);
+}
+
+.dc-btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dc-form-hint {
+  grid-column: 1 / -1;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* کارت تخفیف ویژه */
+.dc-special-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.dc-card {
+  background: #fff;
+  border: 1px solid #fecaca;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.dc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(239, 68, 68, 0.1);
+}
+
+.dc-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.9rem 1rem;
+  background: linear-gradient(135deg, #fef2f2, #fff7ed);
+  border-bottom: 1px solid #fee2e2;
+}
+
+.dc-card-head h4 {
+  margin: 0 0 0.2rem;
+  font-size: 0.9rem;
+  color: #0f172a;
+}
+
+.dc-card-head small {
+  color: #94a3b8;
+  font-size: 0.7rem;
+}
+
+.dc-percent-badge {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  white-space: nowrap;
+}
+
+.dc-card-body {
+  padding: 0.85rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.dc-card-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #64748b;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.dc-card-row strong {
+  color: #334155;
+}
+
+.dc-price-new {
+  color: #dc2626;
+  font-weight: 800;
+}
+
+.dc-price-old {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.dc-status-badge {
+  display: inline-block;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+}
+
+.dc-status-badge.active {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.dc-status-badge.inactive {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.dc-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #f1f5f9;
+  background: #fafbfc;
+  flex-wrap: wrap;
+}
+
+.dc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #334155;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dc-btn:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+.dc-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dc-btn-danger {
+  color: #dc2626;
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+
+.dc-btn-danger:hover:not(:disabled) {
+  background: #fee2e2;
+}
+
+.dc-btn-toggle-on {
+  color: #16a34a;
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+}
+
+.dc-btn-toggle-on:hover:not(:disabled) {
+  background: #dcfce7;
+}
+
+.dc-btn-toggle-off {
+  color: #b45309;
+  border-color: #fcd34d;
+  background: #fffbeb;
+}
+
+.dc-btn-toggle-off:hover:not(:disabled) {
+  background: #fef3c7;
+}
+
+/* جدول کدها */
+.dc-table-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.dc-table-wrap {
+  overflow-x: auto;
+}
+
+.dc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.dc-table th {
+  background: #f8fafc;
+  color: #64748b;
+  font-weight: 600;
+  text-align: right;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.dc-table td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.dc-table tr:last-child td {
+  border-bottom: none;
+}
+
+.dc-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.dc-code-chip {
+  font-family: monospace;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: #fef3c7;
+  color: #b45309;
+  border-radius: 8px;
+  padding: 0.25rem 0.7rem;
+  direction: ltr;
+  display: inline-block;
+}
+
+.dc-empty {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: #94a3b8;
+}
+
+@media (max-width: 640px) {
+  .dc-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .dc-tab {
+    min-width: 100%;
+  }
+}

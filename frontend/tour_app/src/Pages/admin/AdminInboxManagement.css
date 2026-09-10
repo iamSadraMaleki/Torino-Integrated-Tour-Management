@@ -1,0 +1,443 @@
+/* ============ مدیریت اینباکس (ارسال پیام خصوصی + تعلیق) ============ */
+
+.aim-container {
+  padding: 0.25rem;
+}
+
+.aim-header h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.aim-header p {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin: 0.25rem 0 0;
+}
+
+.aim-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.25rem 0 1rem;
+  flex-wrap: wrap;
+}
+
+.aim-tab {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #475569;
+  transition: all 0.2s;
+}
+
+.aim-tab.active {
+  background: linear-gradient(135deg, #0d9488, #0891b2);
+  color: #fff;
+  border-color: transparent;
+}
+
+.aim-notice {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+.aim-send-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.2rem;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.aim-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.aim-form-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.aim-search,
+.aim-input {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.85rem;
+  font-family: inherit;
+  background: #f8fafc;
+}
+
+.aim-search:focus,
+.aim-input:focus,
+.aim-textarea:focus {
+  outline: none;
+  border-color: #0d9488;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
+}
+
+.aim-user-list {
+  max-height: 180px;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.aim-user-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.55rem 0.8rem;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.82rem;
+  transition: background 0.15s;
+}
+
+.aim-user-item:last-child {
+  border-bottom: none;
+}
+
+.aim-user-item:hover {
+  background: #f0fdfa;
+}
+
+.aim-user-item.selected {
+  background: #ccfbf1;
+}
+
+.aim-user-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.aim-user-role {
+  font-size: 0.7rem;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 0.1rem 0.5rem;
+  border-radius: 99px;
+}
+
+.aim-user-suspended {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #b91c1c;
+  background: #fee2e2;
+  padding: 0.1rem 0.5rem;
+  border-radius: 99px;
+}
+
+.aim-no-users {
+  padding: 1rem;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.82rem;
+}
+
+.aim-recipient-selected {
+  font-size: 0.8rem;
+  color: #0f766e;
+  font-weight: 600;
+  background: #ccfbf1;
+  border: 1px solid #99f6e4;
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+}
+
+.aim-textarea {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.85rem;
+  font-family: inherit;
+  resize: vertical;
+  background: #f8fafc;
+}
+
+.aim-send-btn {
+  background: linear-gradient(135deg, #0d9488, #0891b2);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: all 0.2s;
+}
+
+.aim-send-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
+}
+
+.aim-send-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ---------- کاربران معلق ---------- */
+
+.aim-suspend-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.aim-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #94a3b8;
+}
+
+.aim-empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.aim-suspend-table-wrap {
+  overflow-x: auto;
+}
+
+.aim-suspend-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  min-width: 700px;
+}
+
+.aim-suspend-table thead th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  text-align: right;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.aim-suspend-table tbody td {
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.aim-suspend-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.aim-cell-name {
+  font-weight: 600;
+}
+
+.aim-cell-ltr {
+  direction: ltr;
+  text-align: right;
+}
+
+.aim-status {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+.aim-status.suspended {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.aim-unsuspend-btn {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.aim-unsuspend-btn:hover {
+  background: #d1fae5;
+  border-color: #6ee7b7;
+}
+
+/* ---------- تاریخچه ارسال ---------- */
+
+.aim-history-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.aim-history-toolbar {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+  background: #f8fafc;
+}
+
+.aim-history-toolbar .aim-search {
+  flex: 1;
+  min-width: 200px;
+}
+
+.aim-type-filter {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.82rem;
+  font-family: inherit;
+  background: #fff;
+  color: #334155;
+}
+
+.aim-history-table-wrap {
+  overflow-x: auto;
+}
+
+.aim-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  min-width: 900px;
+}
+
+.aim-history-table thead th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 700;
+  font-size: 0.74rem;
+  padding: 0.7rem 0.85rem;
+  text-align: right;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.aim-history-table tbody td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  vertical-align: top;
+}
+
+.aim-history-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.aim-history-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.aim-hist-type {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #0f766e;
+  background: #f0fdfa;
+  border: 1px solid #99f6e4;
+  padding: 0.2rem 0.55rem;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+.aim-hist-recipient {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  color: #1e293b;
+  white-space: nowrap;
+}
+
+.aim-hist-role {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 0.08rem 0.45rem;
+  border-radius: 99px;
+}
+
+.aim-hist-sender {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.aim-hist-sender small {
+  color: #94a3b8;
+  font-size: 0.68rem;
+  direction: ltr;
+  text-align: right;
+}
+
+.aim-hist-title {
+  font-weight: 600;
+  color: #1e293b;
+  min-width: 120px;
+}
+
+.aim-hist-content {
+  color: #475569;
+  max-width: 320px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.aim-hist-date {
+  white-space: nowrap;
+  color: #64748b;
+  font-size: 0.75rem;
+}
+
+.aim-read-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+.aim-read-badge.read {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.aim-read-badge.unread {
+  background: #fee2e2;
+  color: #b91c1c;
+}
